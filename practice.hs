@@ -41,3 +41,9 @@ addVecThreeSimplified (a1, b1, c1) (a2, b2, c2) = (a1 + a2, b1 + b2, c1 + c2)
 
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome xs = xs == reverse xs
+
+threeEqual :: Eq a => a -> a -> a -> Bool
+threeEqual m n p = (m == n) && (m == p) && (n == p)
+
+fourEqual :: Integer -> Integer -> Integer -> Integer -> Bool
+fourEqual m n o p = (threeEqual m n o) && (threeEqual m n p) && (threeEqual m o p) && (threeEqual n o p)
