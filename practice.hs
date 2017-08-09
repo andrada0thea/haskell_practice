@@ -1,3 +1,5 @@
+import Data.Char
+
 threeDifferent :: Integer -> Integer -> Integer -> Bool
 threeDifferent m n p = (m /= n) && (m /= p) && (n /= p)
 
@@ -62,3 +64,6 @@ offset = fromEnum 'A' - fromEnum 'a'
 
 toUpper' :: Char -> Char
 toUpper' ch = toEnum (fromEnum ch + offset)
+
+charToNum :: Char -> Int
+charToNum ch = if (isDigit ch == True) then digitToInt ch else 0
