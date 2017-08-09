@@ -67,3 +67,6 @@ toUpper' ch = toEnum (fromEnum ch + offset)
 
 charToNum :: Char -> Int
 charToNum ch = if (isDigit ch == True) then digitToInt ch else 0
+
+onThreeLines :: [Char] -> [Char] -> [Char] -> IO ()
+onThreeLines x y z = putStr (x ++ "\n" ++ y ++ "\n" ++ z ++ "\n")
