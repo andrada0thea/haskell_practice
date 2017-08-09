@@ -38,3 +38,6 @@ addVecThreeFST a b = (first a + first b, second a + second b, third a + third b)
 
 addVecThreeSimplified :: (Num a) => (a, a, a) -> (a, a, a) -> (a, a, a)
 addVecThreeSimplified (a1, b1, c1) (a2, b2, c2) = (a1 + a2, b1 + b2, c1 + c2)
+
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome xs = xs == reverse xs
