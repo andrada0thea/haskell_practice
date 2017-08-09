@@ -56,3 +56,9 @@ minThree x y z
  | (x <= y) && (x <= z) = x
  | (y <= x) && (y <= z) = y
  | (z <= y) && (z <= x) = z
+
+offset :: Int
+offset = fromEnum 'A' - fromEnum 'a'
+
+toUpper' :: Char -> Char
+toUpper' ch = toEnum (fromEnum ch + offset)
