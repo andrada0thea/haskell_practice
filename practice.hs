@@ -47,3 +47,12 @@ threeEqual m n p = (m == n) && (m == p) && (n == p)
 
 fourEqual :: Integer -> Integer -> Integer -> Integer -> Bool
 fourEqual m n o p = (threeEqual m n o) && (threeEqual m n p) && (threeEqual m o p) && (threeEqual n o p)
+
+min' :: Ord t => t -> t -> t
+min' x y = if x <= y then x else y
+
+minThree :: Ord a => a -> a -> a -> a
+minThree x y z
+ | (x <= y) && (x <= z) = x
+ | (y <= x) && (y <= z) = y
+ | (z <= y) && (z <= x) = z
