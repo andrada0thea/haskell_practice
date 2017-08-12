@@ -80,3 +80,9 @@ howManyAboveAverage x y z
  | ((x > ceiling(averageThree x y z)) && (y > ceiling(averageThree x y z))) || ((x > ceiling(averageThree x y z)) && (z > ceiling(averageThree x y z))) || ((z > ceiling(averageThree x y z)) && (y > ceiling(averageThree x y z))) = 2
  | (x > ceiling(averageThree x y z)) || (y > ceiling(averageThree x y z)) || (z > ceiling(averageThree x y z)) = 1
  | otherwise = 0
+
+numberNDroots :: Float -> Float -> Float -> Integer
+numberNDroots a b c
+ | b^2 > 4.0 * a * c = 2
+ | b^2 == 4.0 * a * c = 1
+ | b^2 < 4.0 * a * c = 0
