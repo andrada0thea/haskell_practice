@@ -87,6 +87,12 @@ numberNDroots a b c
  | b^2 == 4.0 * a * c = 1
  | b^2 < 4.0 * a * c = 0
 
+numberRoots :: Float -> Float -> Float -> Integer
+numberRoots a b c
+ | b /= 0.0 = 1
+ | b == 0.0 && c /= 0.0 = 0
+ | a /= 0.0 && b == 0.0 && c == 0.0 = 3
+
 smallerRoot, largerRoot :: Float -> Float -> Float -> Float
 smallerRoot a b c = (-b - sqrt(b^2 - 4.0 * a * c))/ 2 * a
 largerRoot a b c = (-b + sqrt(b^2 - 4.0 * a * c))/ 2 * a
