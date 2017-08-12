@@ -70,3 +70,13 @@ charToNum ch = if (isDigit ch == True) then digitToInt ch else 0
 
 onThreeLines :: [Char] -> [Char] -> [Char] -> IO ()
 onThreeLines x y z = putStr (x ++ "\n" ++ y ++ "\n" ++ z ++ "\n")
+
+averageThree :: Integer -> Integer -> Integer -> Float
+averageThree x y z = fromIntegral (x + y + z) / 3
+
+howManyAboveAverage :: Integer -> Integer -> Integer -> Integer
+howManyAboveAverage x y z
+ | (x > ceiling (averageThree x y z)) && (y > ceiling(averageThree x y z)) && (z > ceiling(averageThree x y z)) = 3
+ | ((x > ceiling(averageThree x y z)) && (y > ceiling(averageThree x y z))) || ((x > ceiling(averageThree x y z)) && (z > ceiling(averageThree x y z))) || ((z > ceiling(averageThree x y z)) && (y > ceiling(averageThree x y z))) = 2
+ | (x > ceiling(averageThree x y z)) || (y > ceiling(averageThree x y z)) || (z > ceiling(averageThree x y z)) = 1
+ | otherwise = 0
