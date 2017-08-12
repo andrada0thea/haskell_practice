@@ -96,3 +96,21 @@ numberRoots a b c
 smallerRoot, largerRoot :: Float -> Float -> Float -> Float
 smallerRoot a b c = (-b - sqrt(b^2 - 4.0 * a * c))/ 2 * a
 largerRoot a b c = (-b + sqrt(b^2 - 4.0 * a * c))/ 2 * a
+
+max' :: Integer -> Integer -> Integer
+max' x y 
+ | x >= y = x
+ | otherwise = y
+
+maxThree :: Integer -> Integer -> Integer -> Integer
+maxThree x y z = max' z $ max' x y
+
+maxFour :: Integer -> Integer -> Integer -> Integer -> Integer
+maxFour x y z w 
+ | x >= maxThree y z w = x
+ | y >= maxThree x z w = y
+ | z >= maxThree x y w = z
+ | w >= maxThree x y z = w
+
+maxFour' :: Integer -> Integer -> Integer -> Integer -> Integer
+maxFour' x y z w = max' w $ maxThree x y z  
