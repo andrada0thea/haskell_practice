@@ -1,3 +1,6 @@
+-- exercises from 
+-- "Haskell: The Craft of Functional Programming (3rd Edition)" 
+-- by Simon Thompson
 import Data.Char
 
 -- 3.9
