@@ -1,0 +1,5 @@
+test text file for ch01.hs
+
+line1
+line2
+line3
