@@ -40,12 +40,6 @@ capital :: String -> String
 capital "" = "Empty string!"
 capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 
-buyPepsi :: (RealFloat a) => a -> String
-buyPepsi change 
- | change < 1.20 = "You can't buy a Pepsi. Search for more change."
- | change == 1.20 = "You can buy a Pepsi!"
- | otherwise = "Go for a meal deal maybe?"
-
 bmiTell :: (RealFloat a) => a -> a -> String  
 bmiTell weight height  
  | bmi <= skinny = "You're underweight, you emo, you!"  
@@ -384,3 +378,4 @@ instance YesNo TrafficLight where
 
 yesnoIf :: (YesNo y) => y -> a -> a -> a
 yesnoIf yesnoVal yesResult noResult = if yesno yesnoVal then yesResult else noResult
+
