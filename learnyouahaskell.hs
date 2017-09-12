@@ -389,4 +389,13 @@ instance Functor Tree where
   fmap f EmptyTree = EmptyTree
   fmap f (Node x leftsub rightsub) = Node (f x) (fmap f leftsub) (fmap f rightsub)
 
-  
+class Tofu t where
+  tofu :: j a -> t a j
+
+data Frank a b = Frank {frankField :: b a} deriving (Show)
+
+data Barry t k p = Barry {yabba :: p, dabba :: t k}
+
+instance Functor (Barry a b) where
+  fmap f (Barry {yabba = x, dabba = y}) = Barry {yabba = f x, dabba = y}
+
