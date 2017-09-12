@@ -379,3 +379,14 @@ instance YesNo TrafficLight where
 yesnoIf :: (YesNo y) => y -> a -> a -> a
 yesnoIf yesnoVal yesResult noResult = if yesno yesnoVal then yesResult else noResult
 
+class Functor' f where
+  fmap' :: (a -> b) -> f a -> f b
+
+instance Functor' [] where
+  fmap' = map
+
+instance Functor Tree where
+  fmap f EmptyTree = EmptyTree
+  fmap f (Node x leftsub rightsub) = Node (f x) (fmap f leftsub) (fmap f rightsub)
+
+  
