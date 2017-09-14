@@ -129,3 +129,26 @@ maxThreeOccurs x y z
  |otherwise = (m, 1)
   where
    m = maxThree x y z
+
+-- 4.3 chapter
+data Move = Rock | Paper | Scissors deriving (Show, Eq)
+
+beat :: Move -> Move
+beat Rock = Paper
+beat Paper = Scissors
+beat Scissors = Rock
+
+lose :: Move -> Move
+lose Rock = Scissors
+lose Paper = Rock
+lose _ = Paper
+
+-- 4.11
+data Result = Win | Lose | Draw deriving (Show)
+
+-- 4.12
+outcome :: Move -> Move -> Result
+outcome x y
+ | x == y = Draw 
+ | beat y == x = Win
+ | otherwise = Lose
