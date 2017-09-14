@@ -152,3 +152,25 @@ outcome x y
  | x == y = Draw 
  | beat y == x = Win
  | otherwise = Lose
+
+-- 4.15
+data Temp = Cold | Hot deriving (Eq, Show, Ord)
+
+data Season = Winter | Spring | Summer | Autumn deriving (Show, Eq)
+
+tempFromSeason :: Season -> Temp
+tempFromSeason season
+ | season == Winter = Cold
+ | season == Summer = Hot
+ | season == Autumn = Cold
+ | season == Spring = Cold
+
+-- 4.16
+data Month = December | January | February | March | April | May | June | July | August | September | October | November deriving (Show, Eq)
+
+seasonFromMonth :: Month -> Season
+seasonFromMonth x
+ | x == December || x == January || x == February = Winter
+ | x == March || x == April || x == May = Spring
+ | x == June || x == July || x == August = Summer
+ | x == September || x == October || x == November = Autumn 
