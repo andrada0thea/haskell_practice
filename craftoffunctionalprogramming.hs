@@ -87,3 +87,38 @@ maxFour x y z w
 
 maxFour' :: Integer -> Integer -> Integer -> Integer -> Integer
 maxFour' x y z w = max' w $ maxThree x y z  
+
+-- 4.2
+
+-- 4.3
+howManyEqual :: Integer -> Integer -> Integer -> Integer
+howManyEqual m n p 
+ | m == n && m == p = 3
+ | (m == n && m /= p) || (n == p && n /= m) || (m == p && m /= n) = 2
+ | m /= n && m /= p && n /= p = 0
+
+-- 4.4 -- not finished
+howManyOfFourEqual :: Integer -> Integer -> Integer -> Integer -> Integer
+howManyOfFourEqual x y z w
+ | (howManyEqual x y z == 3) && (howManyEqual x y w == 3) = 4
+ | (howManyEqual x y z == 3 || howManyEqual x y w == 3 || 
+    howManyEqual x z w == 3 || howManyEqual y z w == 3) && 
+   (howManyEqual x y z == 2 || howManyEqual x y w == 2 || 
+    howManyEqual x z w == 2 || howManyEqual y z w == 2) = 3
+
+-- 4.5
+
+-- 4.6
+
+-- 4.7
+
+-- 4.8
+triArea :: Float -> Float -> Float -> Float
+triArea a b c
+ | possible = sqrt(s*(s-a)*(s-b)*(s-c))
+ | otherwise = 0
+ where 
+  s = (a+b+c)/2
+  possible = a >= 0 && b >= 0 && c >= 0 && (a + b > c || a + c > b || b + c > a)
+
+
