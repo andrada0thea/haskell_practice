@@ -174,3 +174,18 @@ seasonFromMonth x
  | x == March || x == April || x == May = Spring
  | x == June || x == July || x == August = Summer
  | x == September || x == October || x == November = Autumn 
+
+-- 4.17
+rangeProduct :: Integer -> Integer -> Integer
+rangeProduct m n
+ | (n < m) = 0
+ | (m == n) = m
+ | (m + 1 == n) = m * n
+ | otherwise = m * rangeProduct (m+1) (n-1) * n
+
+-- 4.18
+fac :: Integer -> Integer
+fac x
+ | (x < 0) = 0
+ | (x == 0 || x == 1) = x
+ | otherwise = rangeProduct 1 x
