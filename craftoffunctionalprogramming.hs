@@ -202,8 +202,8 @@ mySqrt n = sqrtIter n 1
 
 sqrtIter :: Integer -> Integer -> Integer
 sqrtIter n guess
-         |(square guess == n)   = guess
-         |(square next) > n     = guess
-         |otherwise             = sqrtIter n next
-         where
-         next = guess + 1
+ |(square guess == n) = guess
+ |(square next) > n = guess
+ |otherwise = sqrtIter n next
+  where
+   next = guess + 1
