@@ -189,3 +189,21 @@ fac x
  | (x < 0) = 0
  | (x == 0 || x == 1) = x
  | otherwise = rangeProduct 1 x
+
+-- 4.19
+integerSqrt :: (RealFrac a, Integral b, Floating a) => a -> b
+integerSqrt x = floor (sqrt x)
+
+square :: Integer -> Integer
+square n = n * n
+
+mySqrt :: Integer -> Integer
+mySqrt n = sqrtIter n 1
+
+sqrtIter :: Integer -> Integer -> Integer
+sqrtIter n guess
+         |(square guess == n)   = guess
+         |(square next) > n     = guess
+         |otherwise             = sqrtIter n next
+         where
+         next = guess + 1
