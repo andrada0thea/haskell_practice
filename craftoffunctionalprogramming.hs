@@ -121,4 +121,11 @@ triArea a b c
   s = (a+b+c)/2
   possible = a >= 0 && b >= 0 && c >= 0 && (a + b > c || a + c > b || b + c > a)
 
-
+-- 4.9
+maxThreeOccurs :: Integer -> Integer -> Integer -> (Integer, Integer)
+maxThreeOccurs x y z
+ | threeEqual x y z = (x,3)
+ |(x == y && x == m) || (y == z && y == m) || (x == y && y == m) = (m, 2)
+ |otherwise = (m, 1)
+  where
+   m = maxThree x y z
