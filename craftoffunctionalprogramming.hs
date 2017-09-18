@@ -191,6 +191,11 @@ fac x
  | otherwise = rangeProduct 1 x
 
 -- 4.19
+natNumbersMult :: Num a => [a] -> a
+natNumbersMult [] = 1
+natNumbersMult (x:xs) = natNumbersMult xs * x 
+
+-- 4.20
 integerSqrt :: (RealFrac a, Integral b, Floating a) => a -> b
 integerSqrt x = floor (sqrt x)
 
@@ -207,3 +212,12 @@ sqrtIter n guess
  |otherwise = sqrtIter n next
   where
    next = guess + 1
+
+-- 4.23
+sumFun :: (Integer -> Integer) -> Integer -> Integer
+sumFun f n
+ | n == 0 = f 0
+ | n > 0 = sumFun f (n-1) + f n
+
+regions :: Integer -> Integer
+regions n = (sumFun id n) + 1
