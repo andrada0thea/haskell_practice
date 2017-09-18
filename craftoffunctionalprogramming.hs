@@ -213,6 +213,10 @@ sqrtIter n guess
   where
    next = guess + 1
 
+-- 4.21
+
+-- 4.22
+
 -- 4.23
 sumFun :: (Integer -> Integer) -> Integer -> Integer
 sumFun f n
@@ -221,3 +225,4 @@ sumFun f n
 
 regions :: Integer -> Integer
 regions n = (sumFun id n) + 1
+
