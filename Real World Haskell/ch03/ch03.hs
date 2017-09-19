@@ -1,3 +1,5 @@
+import Data.List
+
 -- exercise 1
 length' :: Num a => [a1] -> a
 length' [] = 0
@@ -17,3 +19,12 @@ checkPalindrome x
  | x == reverse x = True
  | x /= reverse x = False
 
+-- exercise 6
+sortSublists :: Ord a => [a] -> [a]
+sortSublists xs = sortBy compare xs
+
+-- exercise 7
+intersperse' :: a -> [[a]] -> [a]
+intersperse' separator [] = []
+intersperse' separator (x:[]) = x
+intersperse' separator (x:xs) = x ++ [separator] ++ intersperse' separator xs
