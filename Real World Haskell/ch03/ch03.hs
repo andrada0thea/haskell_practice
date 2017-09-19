@@ -35,3 +35,4 @@ data Tree a = Node a (Tree a) (Tree a) | Empty deriving (Show)
 calculateHeight :: (Num t, Ord t) => Tree t1 -> t
 calculateHeight Empty = 0
 calculateHeight (Node _ left right) = 1 + max (calculateHeight left) (calculateHeight right)
+
