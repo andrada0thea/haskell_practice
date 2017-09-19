@@ -36,3 +36,15 @@ calculateHeight :: (Num t, Ord t) => Tree t1 -> t
 calculateHeight Empty = 0
 calculateHeight (Node _ left right) = 1 + max (calculateHeight left) (calculateHeight right)
 
+-- exercise 10
+data Direction = Left | Right | Straight deriving (Show, Eq)
+
+-- exercise 11
+-- type Point = (Double, Double)
+
+-- directionFromAngles (ax, ay) (bx, by) (cx, cy)
+-- | v1 == v2 = Straight
+-- | v1 > v2 = Left
+-- | v1 < v2 = Right
+-- where v1 = (ax - bx)*(ay - by)
+--       v2 = (cx - bx)*(cy - by)
