@@ -48,3 +48,7 @@ data Direction = Left | Right | Straight deriving (Show, Eq)
 -- | v1 < v2 = Right
 -- where v1 = (ax - bx)*(ay - by)
 --       v2 = (cx - bx)*(cy - by)
+
+-- exercise 12
+
+-- exercise 13
